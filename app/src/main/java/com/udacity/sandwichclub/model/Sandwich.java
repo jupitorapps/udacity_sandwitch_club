@@ -1,15 +1,15 @@
 package com.udacity.sandwichclub.model;
 
-import java.util.List;
+import org.json.JSONArray;
 
 public class Sandwich {
 
     private String mainName;
-    private List<String> alsoKnownAs = null;
+    private JSONArray alsoKnownAs = null;
     private String placeOfOrigin;
     private String description;
     private String image;
-    private List<String> ingredients = null;
+    private JSONArray ingredients = null;
 
     /**
      * No args constructor for use in serialization
@@ -17,7 +17,10 @@ public class Sandwich {
     public Sandwich() {
     }
 
-    public Sandwich(String mainName, List<String> alsoKnownAs, String placeOfOrigin, String description, String image, List<String> ingredients) {
+    //List<String> alsoKnownAs,
+    //, List<String> ingredients
+
+    public Sandwich(String mainName, JSONArray alsoKnownAs, JSONArray ingredients, String placeOfOrigin, String description, String image) {
         this.mainName = mainName;
         this.alsoKnownAs = alsoKnownAs;
         this.placeOfOrigin = placeOfOrigin;
@@ -34,11 +37,11 @@ public class Sandwich {
         this.mainName = mainName;
     }
 
-    public List<String> getAlsoKnownAs() {
+    public JSONArray getAlsoKnownAs() {
         return alsoKnownAs;
     }
 
-    public void setAlsoKnownAs(List<String> alsoKnownAs) {
+    public void setAlsoKnownAs(JSONArray alsoKnownAs) {
         this.alsoKnownAs = alsoKnownAs;
     }
 
@@ -66,11 +69,11 @@ public class Sandwich {
         this.image = image;
     }
 
-    public List<String> getIngredients() {
+    public JSONArray getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<String> ingredients) {
+    public void setIngredients(JSONArray ingredients) {
         this.ingredients = ingredients;
     }
 }
