@@ -16,8 +16,6 @@ import org.json.JSONException;
 
 public class DetailActivity extends AppCompatActivity {
 
-    String TAG = "TAGG";
-
     public static final String EXTRA_POSITION = "extra_position";
     private static final int DEFAULT_POSITION = -1;
 
@@ -38,6 +36,8 @@ public class DetailActivity extends AppCompatActivity {
             closeOnError();
         }
 
+
+        assert intent != null;
         int position = intent.getIntExtra(EXTRA_POSITION, DEFAULT_POSITION);
         if (position == DEFAULT_POSITION) {
             // EXTRA_POSITION not found in intent
@@ -87,13 +87,11 @@ public class DetailActivity extends AppCompatActivity {
         }
 
 
-        populateUI();
+
         Picasso.with(this)
                 .load(sandwich.getImage())
                 .placeholder(R.drawable.loading)
                 .into(ingredientsIv);
-
-        setTitle(sandwich.getMainName());
     }
 
     private void closeOnError() {
@@ -101,9 +99,4 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void populateUI() {
-
-
-
-    }
 }
